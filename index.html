@@ -28,6 +28,7 @@ function doKeyDown()
 </script>
 </head>
 <body onkeydown="doKeyDown()" oncontextmenu="return false" >
+<!--	顶部菜单-->
 	<div class="top">
                    <center> 
                     <ul>
@@ -49,14 +50,25 @@ function doKeyDown()
                       </ul>
                     </center>      
             </div>
+<!--	必应壁纸-->
     <div style="position:fixed;z-index:-100; left:0px; top:0px; width:100%; height:100%">
         <img src="https://api.berryapi.net/?service=App.Bing.Images&day=0" width="100%" height="100%" alt="背景图片加载......" class="blur">
     </div>
+<!--	搜索+今日诗词-->
     <div style="text-align:center;vertical-align:middle;line-height: 300px">
 		<input type="text" id="Put_01" placeholder="搜索..." class="an">
+		
 		<h3 id="jinrishici-sentence" style="color: aliceblue"><br>正在加载今日诗词....</h3>
         <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+		
+		<div id="weather-view-he"></div>
+    <script>
+//	请使用自己的ID 谢谢
+    WIDGET = {ID: 'v2qSrpsTQF'};
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>
 	</div>
+<!--	底部-->
 	<div class="footer" style="width: 100%;text-align: center;vertical-align:middle;">
      <a style="color: aliceblue">Copyright &copy;2020 LiangYin 柠蓝初夏Studio</a>
 	 <a href="README.txt">更新日志<br></a>
