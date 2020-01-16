@@ -31,3 +31,17 @@
 		vertical-align:middle;
     }
 
+.an
+{
+width:250px;
+height:25px;
+transition:width 1s;
+-moz-transition:width 1s; /* Firefox 4 */
+-webkit-transition:width 1s; /* Safari and Chrome */
+-o-transition:width 1s; /* Opera */
+}
+
+.an:hover
+{
+width:500px;
+}
