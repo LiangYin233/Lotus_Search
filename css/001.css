@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+    input
+    {
+    text-align:center;
+    border:1px solid #a1a1a1;
+    padding:10px 30px; 
+    border-radius:25px;
+    -moz-border-radius:25px; /* 老的 Firefox */
+    }
+
+	.blur {
+ 
+	filter: blur(5px);
+				
+	-webkit-filter: blur(5px);  /* chrome, opera */
+				
+	-ms-filter: blur(5px);
+				
+	-moz-filter: blur(5px);
+				
+	}
+
+    footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 300px;
+		text-align: center;
+		vertical-align:middle;
+    }
+

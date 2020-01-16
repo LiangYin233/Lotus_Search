@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search|轻·快</title>
+<link rel="stylesheet" href="css/001.css">	
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<script>
+function IE()
+{
+	if (window.ActiveXObject || "ActiveXObject" in window)
+	{
+        window.location.href = "IE.html";
+	}
+}
+	
+function doKeyDown()
+{
+  IE();
+  switch (event.keyCode) {
+     case 13: //回车
+         var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
+		 window.location.href = urlinput;
+         break;
+  }
+}	
+</script>
+</head>
+<body onkeydown="doKeyDown()" oncontextmenu="return false" >
+    <div style="position:fixed;z-index:-100; left:0px; top:0px; width:100%; height:100%">
+        <img src="https://api.berryapi.net/?service=App.Bing.Images&day=0" width="100%" height="100%" alt="背景图片加载......" class="blur">
+    </div>
+    <div style="text-align:center;vertical-align:middle;line-height: 300px">
+		<input type="text" id="Put_01" placeholder="搜索..." style="width:500px;height=100px;">
+		<h3 id="jinrishici-sentence" style="color: aliceblue"><br>正在加载今日诗词....</h3>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+	</div>
+	<div class="footer" style="width: 100%;text-align: center;vertical-align:middle;">
+     <a style="color: aliceblue">Copyright &copy;2020 LiangYin & 柠蓝初夏Studio</a>
+	 <a href="https://liangyin233.github.io/search/README.txt">更新日志</a>
+    </div>
+</body>
+</html>
