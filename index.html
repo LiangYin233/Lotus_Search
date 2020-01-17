@@ -8,9 +8,12 @@
 <link rel="stylesheet" href="css/button.css">	
 <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 <script>
-
-	
 var search_s = 1;
+	
+function a()
+	{
+		alert("已切换引擎！");
+	}
 	
 function upup()
 {
@@ -24,6 +27,7 @@ alert("1.5 2020/1/16\n天气更改为悬浮窗模式");
 alert("2.0 2020/1/16\n代码优化\n增加导航菜单\n增添选择搜索引擎的选项\n降低页脚透明度\n将日志更改为弹窗提示\增加动画");
 alert("2.01 2020/1/16\n代码优化\n更改兼容性");
 alert("2.1 2020/1/16\n增加搜索引擎\n增加引擎切换提示");	
+alert("2.11 2020/1/16\n修复引擎切换提示");	
 }
 	
 function doKeyDown()
@@ -38,28 +42,24 @@ function doKeyDown()
 	      {
              var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
 		     window.open(urlinput,"_blank");
-			 alert("已切换引擎！"); 
-             break;
+            break;
 		  }
 		  else if(search_s == 2)
 		  {
 		      var urlinput = "https://cn.bing.com/search?q=" + document.getElementById("Put_01").value;
 		      window.open(urlinput,"_blank");
-			  alert("已切换引擎！"); 
 			  break;
 		  }
 		  else if(search_s == 3)
 		  {
 			  var urlinput = "https://www.dogedoge.com/results?q=" + document.getElementById("Put_01").value;
 		      window.open(urlinput,"_blank");
-			  alert("已切换引擎！"); 
 			  break;
 		  }
 		  else if(search_s == 4)
 		  {
 			  var urlinput = "https://magi.com/search?q=" + document.getElementById("Put_01").value;
 		      window.open(urlinput,"_blank");
-			  alert("已切换引擎！"); 
 			  break;	  
 		  }
   }
@@ -142,10 +142,10 @@ function doKeyDown()
 <!--	底部-->
 	<div class="footer" style="width: 100%;text-align: center;vertical-align:middle;">
 		
-	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 1;">百度</a>
-	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 2;">必应</a>
-	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 3;">多吉</a>
-	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 4;">Magi</a>
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 1;a()">百度</a>
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 2;a()">必应</a>
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 3;a()">多吉</a>
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 4;a()">Magi</a>
 	 <br>	
 		
      <a style="color:rgba(0,0,0,0.5);">Copyright &copy;2020 LiangYin 柠蓝初夏Studio</a>
