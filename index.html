@@ -5,24 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <title>Search|轻·快</title>
 <link rel="stylesheet" href="css/001.css">	
+<link rel="stylesheet" href="css/button.css">	
 <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 <script>
-function IE()
+var search_s = 1;
+	
+function upup()
 {
-	if (window.ActiveXObject || "ActiveXObject" in window)
-	{
-        window.location.href = "IE.html";
-	}
+alert("本项目为LiangYin开发的浏览器主页\n引用内容：\nCSDN:Man_Zuo的CSS\n开源项目:BootCss的按钮CSS\n不蒜子计数\n中国天气网提供天气");
+alert("1.0 2020/1/16\n网站上线");
+alert("1.1 2020/1/16\n取消对IE浏览器的支持\n网页LOGO增加\n更改为实时必应壁纸");
+alert("1.2 2020/1/16\n增加动画\n优化体验\n将_self更改为_blank\n缩放优化");
+alert("1.3 2020/1/16\n增加网址导航\n1.31\n适配手机\n1.32\n增加不蒜子计数");
+alert("1.4 2020/1/16\n增加今日天气\n优化可读性");
+alert("1.5 2020/1/16\n天气更改为悬浮窗模式");
+alert("2.0 2020/1/16\n代码优化\n增加导航菜单\n增添选择搜索引擎的选项\n降低页脚透明度\n将日志更改为弹窗提示\增加动画");
 }
 	
 function doKeyDown()
 {
-  IE();
+  if (window.ActiveXObject || "ActiveXObject" in window)
+  {
+        window.location.href = "IE.html";
+  }
   switch (event.keyCode) {
      case 13: //回车
-         var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
-		 window.open(urlinput,"_blank");
-         break;
+		  if(search_s == 1)
+	      {
+             var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
+		     window.open(urlinput,"_blank");
+             break;
+		  }
+		  else if(search_s == 2)
+		  {
+		      var urlinput = "https://cn.bing.com/search?q=" + document.getElementById("Put_01").value;
+		      window.open(urlinput,"_blank");
+			  break;
+		  }
+		  else
+		  {
+			  var urlinput = "https://www.dogedoge.com/results?q=" + document.getElementById("Put_01").value;
+		      window.open(urlinput,"_blank");
+			  break;
+		  }
   }
 }	
 </script>
@@ -33,46 +58,90 @@ function doKeyDown()
                    <center> 
                     <ul>
                     <li>
-                        <a href="#">常用</a>
+                        <a>热门·办公</a>
                         <ul>
-                            <li><a href="https://wx.qq.com/">微信</a></li>
-                            <li><a href="https://www.luogu.com.cn/">洛谷</a></li>
+                            <li><a href="https://wx.qq.com/" target="_blank">微信</a></li>
+							<li><a href="https://www.jd.com/" target="_blank">京东</a></li>
+							<li><a href="https://www.taobao.com/" target="_blank">淘宝</a></li>
+							<li><a href="https://weibo.com/" target="_blank">微博</a></li>
+							<li><a href="http://dict.youdao.com/" target="_blank">有道翻译</a></li>
+							<li><a href="https://pan.baidu.com/" target="_blank">百度网盘</a></li>
                         </ul>
                     </li>  
                     <li>
-                        <a href="#">娱乐</a>
+                        <a>影视·娱乐</a>
                         <ul>
-                            <li><a href="https://www.bilibili.com/">哔哩哔哩</a></li>
-                            <li><a href="https://www.iqiyi.com/">爱奇艺</a></li>
-							<li><a href="https://www.youku.com/">优酷</a></li>
+							<li><a href="https://www.youku.com/" target="_blank">优酷</a></li>
+							<li><a href="https://www.iqiyi.com/" target="_blank">爱奇艺</a></li>
+							<li><a href="https://v.qq.com/" target="_blank">腾讯视频</a></li>
+                            <li><a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a></li>
+							<li><a href="https://music.163.com/" target="_blank">网易云音乐</a></li>
+							<li><a href="https://www.acfun.cn/" target="_blank">AcFun</a></li>
                         </ul>
-                    </li>        
+                    </li>
+						<li>
+                        <a>新闻·社区</a>
+                        <ul>
+							<li><a href="https://www.douban.com/" target="_blank">豆瓣</a></li>
+							<li><a href="https://qzone.qq.com/" target="_blank">QQ空间</a></li>
+                            <li><a href="https://news.qq.com/" target="_blank">腾讯新闻</a></li>
+                            <li><a href="https://news.163.com/" target="_blank">网易新闻</a></li>
+							<li><a href="http://news.ifeng.com/" target="_blank">凤凰资讯</a></li>
+							<li><a href="https://tieba.baidu.com/" target="_blank">百度贴吧</a></li>
+                        </ul>
+                    </li>
+						 <li>
+                        <a>编程·学习</a>
+                        <ul>
+                            <li><a href="https://www.luogu.com.cn/" target="_blank">洛谷</a></li>
+							<li><a href="https://www.zhihu.com/" target="_blank">知乎</a></li>
+							<li><a href="https://wiki.hk.wjbk.site/wiki/Wikipedia:%E9%A6%96%E9%A1%B5" target="_blank">维基百科</a></li>
+							<li><a href="https://baike.baidu.com/" target="_blank">百度百科</a></li>
+					        <li><a href="https://ke.qq.com/" target="_blank">腾讯课堂</a></li>		
+							<li><a href="https://www.w3school.com.cn/" target="_blank">Web学习</a></li>
+                        </ul>
+                    </li>  
                       </ul>
                     </center>      
             </div>
 <!--	必应壁纸-->
     <div style="position:fixed;z-index:-100; left:0px; top:0px; width:100%; height:100%">
+		
         <img src="https://api.berryapi.net/?service=App.Bing.Images&day=0" width="100%" height="100%" alt="背景图片加载......" class="blur">
+		
     </div>
 <!--	搜索+今日诗词-->
     <div style="text-align:center;vertical-align:middle;line-height: 300px">
-		<input type="text" id="Put_01" placeholder="搜索..." class="an">
 		
-		<h3 id="jinrishici-sentence" style="color: aliceblue"><br>正在加载今日诗词....</h3>
-        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+		<input type="text" id="Put_01" placeholder="搜索..." class="an">
 
-	</div>
+       <h3 id="jinrishici-sentence" style="color: aliceblue;animation:poems 999s;-webkit-animation:poems 999s;animation-iteration-count: infinite;-moz-animation-iteration-count: infinite;-webkit-animation-iteration-count: infinite;-o-animation-iteration-count: infinite;">正在加载今日诗词....</h3>
+       <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+		
+	</div>	
+	
 <!--	底部-->
 	<div class="footer" style="width: 100%;text-align: center;vertical-align:middle;">
-     <a style="color: aliceblue">Copyright &copy;2020 LiangYin 柠蓝初夏Studio</a>
-	 <a href="README.txt">更新日志<br></a>
+		
+	 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 1;">百度</a>
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 2;">必应</a>
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 3;">多吉</a>
+	 <br>	
+		
+     <a style="color:rgba(0,0,0,0.5);">Copyright &copy;2020 LiangYin 柠蓝初夏Studio</a>
+	 <button onClick="upup();" style="opacity:0.5;">更新日志<br></button>
 	 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-     <span id="busuanzi_container_site_uv" style="color: aliceblue">本站总访问量<span id="busuanzi_value_site_uv"></span>次</span>
+     <span id="busuanzi_container_site_uv" style="color:rgba(0,0,0,0.5);">本站总访问量<span id="busuanzi_value_site_uv"></span>次</span>
+		
 	<!-- 001 -->
     <script type="text/javascript">
     WIDGET = {FID: '3Zsx5jThvy'}
     </script>
     <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+		
     </div>
+	
 </body>
 </html>

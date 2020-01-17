@@ -46,6 +46,24 @@ transition:width 1s;
 width:500px;
 }
 
+@keyframes poems
+{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+
+@-webkit-keyframes poems
+{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+
+@-moz-keyframes poems
+{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+
 /*以下代码为CSDN Man_zuo大佬编写:*/
  .top{
     /* 设置宽度高度背景颜色 */
