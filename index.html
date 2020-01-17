@@ -23,6 +23,7 @@ alert("1.4 2020/1/16\n增加今日天气\n优化可读性");
 alert("1.5 2020/1/16\n天气更改为悬浮窗模式");
 alert("2.0 2020/1/16\n代码优化\n增加导航菜单\n增添选择搜索引擎的选项\n降低页脚透明度\n将日志更改为弹窗提示\增加动画");
 alert("2.01 2020/1/16\n代码优化\n更改兼容性");
+alert("2.1 2020/1/16\n增加搜索引擎\n增加引擎切换提示");	
 }
 	
 function doKeyDown()
@@ -37,19 +38,29 @@ function doKeyDown()
 	      {
              var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
 		     window.open(urlinput,"_blank");
+			 alert("已切换引擎！"); 
              break;
 		  }
 		  else if(search_s == 2)
 		  {
 		      var urlinput = "https://cn.bing.com/search?q=" + document.getElementById("Put_01").value;
 		      window.open(urlinput,"_blank");
+			  alert("已切换引擎！"); 
 			  break;
 		  }
-		  else
+		  else if(search_s == 3)
 		  {
 			  var urlinput = "https://www.dogedoge.com/results?q=" + document.getElementById("Put_01").value;
 		      window.open(urlinput,"_blank");
+			  alert("已切换引擎！"); 
 			  break;
+		  }
+		  else if(search_s == 4)
+		  {
+			  var urlinput = "https://magi.com/search?q=" + document.getElementById("Put_01").value;
+		      window.open(urlinput,"_blank");
+			  alert("已切换引擎！"); 
+			  break;	  
 		  }
   }
 }	
@@ -103,7 +114,12 @@ function doKeyDown()
 					        <li><a href="https://ke.qq.com/" target="_blank">腾讯课堂</a></li>		
 							<li><a href="https://www.w3school.com.cn/" target="_blank">Web学习</a></li>
                         </ul>
-                    </li>  
+                    </li> 
+						
+						
+						
+						
+						
                       </ul>
                     </center>      
             </div>
@@ -114,7 +130,7 @@ function doKeyDown()
 		
     </div>
 <!--	搜索+今日诗词-->
-    <div style="text-align:center;vertical-align:middle;line-height: 300px">
+    <div style="text-align:center;vertical-align:middle;line-height: 310px">
 		
 		<input type="text" id="Put_01" placeholder="搜索..." class="an">
 
@@ -129,12 +145,14 @@ function doKeyDown()
 	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 1;">百度</a>
 	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 2;">必应</a>
 	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 3;">多吉</a>
+	 <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onClick="search_s = 4;">Magi</a>
 	 <br>	
 		
      <a style="color:rgba(0,0,0,0.5);">Copyright &copy;2020 LiangYin 柠蓝初夏Studio</a>
 	 <button onClick="upup();" style="opacity:0.5;">更新日志<br></button>
 	 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
      <span id="busuanzi_container_site_uv" style="color:rgba(0,0,0,0.5);">本站总访问量<span id="busuanzi_value_site_uv"></span>次</span>
+	 <a><br>温馨提示:如果您出现了大小不匹配的问题,请使用Ctrl + 鼠标滚轮 进行缩放调整</a>
 		
 	<!-- 001 -->
     <script type="text/javascript">
