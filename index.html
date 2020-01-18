@@ -10,6 +10,17 @@
 <script>
 var search_s = 1;
 	
+   var aside = document.getElementById("aside")
+
+        function toggle() {
+            if (aside.offsetLeft == 1066) {
+                aside.setAttribute("class", "close")
+            } else {
+                aside.setAttribute("class", "open")
+                console.log("not in")
+            }
+        }
+	
 function a()
 	{
 		alert("已切换引擎！");
@@ -17,18 +28,9 @@ function a()
 	
 function upup()
 {
-alert("本项目为LiangYin开发的浏览器主页\n引用内容：\nCSDN:Man_Zuo的CSS\n开源项目:BootCss的按钮CSS\n不蒜子计数\n中国天气网提供天气");
-alert("1.0 2020/1/16\n网站上线");
-alert("1.1 2020/1/16\n取消对IE浏览器的支持\n网页LOGO增加\n更改为实时必应壁纸");
-alert("1.2 2020/1/16\n增加动画\n优化体验\n将_self更改为_blank\n缩放优化");
-alert("1.3 2020/1/16\n增加网址导航\n1.31\n适配手机\n1.32\n增加不蒜子计数");
-alert("1.4 2020/1/16\n增加今日天气\n优化可读性");
-alert("1.5 2020/1/16\n天气更改为悬浮窗模式");
-alert("2.0 2020/1/16\n代码优化\n增加导航菜单\n增添选择搜索引擎的选项\n降低页脚透明度\n将日志更改为弹窗提示\增加动画");
-alert("2.01 2020/1/16\n代码优化\n更改兼容性");
-alert("2.1 2020/1/16\n增加搜索引擎\n增加引擎切换提示");	
-alert("2.11 2020/1/16\n修复引擎切换提示");	
-alert("2.12 2020/1/16\n必应壁纸API更换");		
+	window.open("up.html","_blank");
+	window.open("tos.html","_blank");
+	window.open("privacy.html","_blank");
 }
 	
 function doKeyDown()
@@ -79,6 +81,7 @@ function doKeyDown()
 							<li><a href="https://www.jd.com/" target="_blank">京东</a></li>
 							<li><a href="https://www.taobao.com/" target="_blank">淘宝</a></li>
 							<li><a href="https://weibo.com/" target="_blank">微博</a></li>
+							<li><a href="https://www.office.com/" target="_blank">Office</a></li>
 							<li><a href="http://dict.youdao.com/" target="_blank">有道翻译</a></li>
 							<li><a href="https://pan.baidu.com/" target="_blank">百度网盘</a></li>
                         </ul>
@@ -89,9 +92,9 @@ function doKeyDown()
 							<li><a href="https://www.youku.com/" target="_blank">优酷</a></li>
 							<li><a href="https://www.iqiyi.com/" target="_blank">爱奇艺</a></li>
 							<li><a href="https://v.qq.com/" target="_blank">腾讯视频</a></li>
+							<li><a href="https://www.acfun.cn/" target="_blank">AcFun</a></li>
                             <li><a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a></li>
 							<li><a href="https://music.163.com/" target="_blank">网易云音乐</a></li>
-							<li><a href="https://www.acfun.cn/" target="_blank">AcFun</a></li>
                         </ul>
                     </li>
 						<li>
@@ -110,17 +113,14 @@ function doKeyDown()
                         <ul>
                             <li><a href="https://www.luogu.com.cn/" target="_blank">洛谷</a></li>
 							<li><a href="https://www.zhihu.com/" target="_blank">知乎</a></li>
+							<li><a href="https://gitee.com/" target="_blank">码云</a></li>
 							<li><a href="https://wiki.hk.wjbk.site/wiki/Wikipedia:%E9%A6%96%E9%A1%B5" target="_blank">维基百科</a></li>
 							<li><a href="https://baike.baidu.com/" target="_blank">百度百科</a></li>
 					        <li><a href="https://ke.qq.com/" target="_blank">腾讯课堂</a></li>		
 							<li><a href="https://www.w3school.com.cn/" target="_blank">Web学习</a></li>
+							<li><a href="https://github.com/" target="_blank">Github</a></li>		
                         </ul>
-                    </li> 
-						
-						
-						
-						
-						
+						</li>
                       </ul>
                     </center>      
             </div>
@@ -150,8 +150,8 @@ function doKeyDown()
 	 <br>	
 		
      <a style="color:rgba(0,0,0,0.5);">Copyright &copy;2020 LiangYin 柠蓝初夏Studio</a>
-	 <button onClick="upup();" style="opacity:0.5;">更新日志<br></button>
-	 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 <button onClick="upup();" style="opacity:0.5;">更新日志与用户须知<br></button>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
      <span id="busuanzi_container_site_uv" style="color:rgba(0,0,0,0.5);">本站总访问量<span id="busuanzi_value_site_uv"></span>次</span>
 	 <a><br>温馨提示:如果您出现了大小不匹配的问题,请使用Ctrl + 鼠标滚轮 进行缩放调整</a>
 		
@@ -162,6 +162,5 @@ function doKeyDown()
     <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
 		
     </div>
-	
 </body>
 </html>
