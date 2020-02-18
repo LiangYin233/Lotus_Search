@@ -5,54 +5,45 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /> 
   <title>Search|轻快</title> 
   <link rel="stylesheet" href="css/001.css" /> 
-  <link rel="stylesheet" href="css/button.css" /> 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico" /> 
   <script>
 var search_s = 1;
 function nowa() {
-    if (search_s == 1) {
-        document.getElementById("now").innerHTML = "当前搜索引擎:百度";
-    }
-    if (search_s == 2) {
-        document.getElementById("now").innerHTML = "当前搜索引擎:多吉";
-    }
+        if (search_s == 1) {
+                document.getElementById("now").innerHTML = "当前搜索引擎:百度";
+        }
+        if (search_s == 2) {
+                document.getElementById("now").innerHTML = "当前搜索引擎:多吉";
+        }
 }
 function doKeyDown() {
-    if (window.ActiveXObject || "ActiveXObject" in window) {
-        window.location.href = "IE.html";
-    }
-    switch (event.keyCode) {
-    case 13:
-        //回车
-        if (search_s == 1) {
-            var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
-            window.open(urlinput, "_blank");
-            break;
-        } else if (search_s == 2) {
-            var urlinput = "https://www.dogedoge.com/results?q=" + document.getElementById("Put_01").value;
-            window.open(urlinput, "_blank");
-            break;
+        switch (event.keyCode) {
+        case 13:
+                if (search_s == 1) {
+                        var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
+                        window.open(urlinput, "_blank");
+					    break;
+                } else if (search_s == 2) {
+                        var urlinput = "https://www.dogedoge.com/results?q=" + document.getElementById("Put_01").value;
+                        window.open(urlinput, "_blank");
+					    break;
+                }
         }
-    }
 }
 </script> 
   <script type="text/ecmascript">
-    /*改变原始宽度（0）*/
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
-    }
-    /*恢复原始宽度0*/
+	}
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-</script> 
+</script>
  </head> 
- <body onkeydown="doKeyDown()">
-    <div style="position:fixed;z-index:-100; left:0px; top:0px; width:100%; height:100%">
-		
-        <img src="https://api.rthe.cn/bing.jpg" width="100%" height="100%" alt="背景图片加载......" class="blur">
-		
-    </div>
+ <body onkeydown="doKeyDown()"> 
+  <div style="position:fixed;z-index:-100; left:0px; top:0px; width:100%; height:100%"> 
+   <img src="https://bing.rthe.net/wallpaper" width="100%" height="100%" alt="背景图片加载......" class="blur" /> 
+  </div> 
   <div id="mySidenav" class="sidenav"> 
    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
    <ul> 
@@ -103,13 +94,13 @@ function doKeyDown() {
   </div> 
   <!--	底部--> 
   <footer> 
-   <div style="height: 120px;text-align: center; line-height: 50px;background-color: rgba(216,216,216,1.00)"> 
-    <a id="now" style="color: rgba(255,255,255,1.00)">当前搜索引擎:百度</a> 
-    <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onclick="search_s = 1;nowa()">百度</a> 
-    <a class="button button-pill button-tiny" style="color: black;font-size: 15px" onclick="search_s = 2;nowa()">多吉</a> 
+   <div> 
+    <a id="now" style="color: rgba(255,255,255,1.00)">当前搜索引擎:百度</a>
+	<input type="button" class="anniu" style="color: black;" onclick="search_s = 1;nowa()" value="百度" />
+	<input type="button" class="anniu" style="color: black;" onclick="search_s = 2;nowa()" value="多吉" />
     <br /> 
-    <a style="color: aliceblue">&copy; 2020 by LiangYin. All rights reserved.</a> 
+    <a style="color: white">&copy; 2020 by LiangYin. All rights reserved.</a> 
    </div> 
-  </footer> 
+  </footer>  
  </body>
 </html>
