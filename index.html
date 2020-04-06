@@ -1,103 +1,84 @@
 <!DOCTYPE html>
 <html>
- <head> 
-  <meta charset="utf-8" /> 
-  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /> 
-  <title>Search|轻快</title> 
-  <link rel="stylesheet" href="css/001.css" /> 
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico" /> 
-  <script>
-var search_s = 1;
-function nowa() {
-        if (search_s == 1) {
-                document.getElementById("now").innerHTML = "当前搜索引擎:百度";
-        }
-        if (search_s == 2) {
-                document.getElementById("now").innerHTML = "当前搜索引擎:多吉";
-        }
-}
-function Down() {
-        switch (event.keyCode) {
-        case 13:
-                if (search_s == 1) {
-                        var urlinput = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=" + document.getElementById("Put_01").value;
-                        window.open(urlinput, "_blank");
-					    break;
-                } else if (search_s == 2) {
-                        var urlinput = "https://www.dogedoge.com/results?q=" + document.getElementById("Put_01").value;
-                        window.open(urlinput, "_blank");
-					    break;
+
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="LiangYinSearch,你的轻快主页">
+        <title>Search|轻快</title>
+        <link rel="stylesheet" href="css/001.css" />
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+        <script>
+                function Down() {
+                        switch (event.keyCode) {
+                                case 13:
+                                        var urlinput = "https://www.dogedoge.com/results?q=" + document.getElementById("Put_01").value;
+                                        window.open(urlinput, "_blank");
+                                        break;
+                        }
+                }    
+        </script>
+        <script type="text/ecmascript">
+                function openNav() {
+                        document.getElementById("mySidenav").style.width = "250px";
                 }
-        }
-}    
-</script> 
-  <script type="text/ecmascript">
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-	}
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
- </head> 
- <body onkeydown="Down()"> 
-  <div id="mySidenav" class="sidenav"> 
-   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
-   <ul> 
-    <a>社区&middot;热门</a> 
-    <ul> 
-     <a href="https://wx.qq.com/" target="_blank">微信</a> 
-     <a href="https://www.jd.com/" target="_blank">京东</a> 
-     <a href="https://www.taobao.com/" target="_blank">淘宝</a> 
-     <a href="https://weibo.com/" target="_blank">微博</a> 
-     <a href="https://www.office.com/" target="_blank">Office</a> 
-     <a href="http://dict.youdao.com/" target="_blank">有道翻译</a> 
-     <a href="https://pan.baidu.com/" target="_blank">百度网盘</a> 
-    </ul> 
-    <a>影视&middot;娱乐</a> 
-    <ul> 
-     <a href="https://www.youku.com/" target="_blank">优酷</a> 
-     <a href="https://www.iqiyi.com/" target="_blank">爱奇艺</a> 
-     <a href="https://v.qq.com/" target="_blank">腾讯视频</a> 
-     <a href="https://www.acfun.cn/" target="_blank">AcFun</a> 
-     <a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a> 
-     <a href="https://music.163.com/" target="_blank">网易云音乐</a> 
-    </ul> 
-    <a>新闻&middot;社区</a> 
-    <ul> 
-     <a href="https://www.douban.com/" target="_blank">豆瓣</a> 
-     <a href="https://qzone.qq.com/" target="_blank">QQ空间</a> 
-     <a href="https://news.qq.com/" target="_blank">腾讯新闻</a> 
-     <a href="https://news.163.com/" target="_blank">网易新闻</a> 
-     <a href="http://news.ifeng.com/" target="_blank">凤凰资讯</a> 
-     <a href="https://tieba.baidu.com/" target="_blank">百度贴吧</a> 
-    </ul> 
-    <a>编程&middot;社区</a> 
-    <ul> 
-     <a href="https://www.luogu.com.cn/" target="_blank">洛谷</a> 
-     <a href="https://www.zhihu.com/" target="_blank">知乎</a> 
-     <a href="https://gitee.com/" target="_blank">码云</a> 
-     <a href="https://wiki.hk.wjbk.site/wiki/Wikipedia:%E9%A6%96%E9%A1%B5" target="_blank">维基百科</a> 
-     <a href="https://baike.baidu.com/" target="_blank">百度百科</a> 
-     <a href="https://ke.qq.com/" target="_blank">腾讯课堂</a> 
-     <a href="https://www.w3school.com.cn/" target="_blank">Web学习</a> 
-     <a href="https://github.com/" target="_blank">Github</a> 
-    </ul> 
-   </ul> 
-  </div> 
-  <span style="font-size:30px; cursor:pointer" onclick="openNav()">☰</span> 
-  <div style="text-align:center;vertical-align:middle;"><br><br><br><br><br><br>
-  <input type="text" id="Put_01" placeholder="搜索..." class="Yuan_Jiao" οnkeyup="keyup()"/><br>
-  </div> 
-  <!--	底部--> 
-  <footer> 
-   <div style="font-size: 1px"> 
-    <a id="now" style="color: rgba(255,255,255,1.00)">当前搜索引擎:百度</a>
-	<button type="submit" onclick="search_s = 1;nowa()">百度</button>
-	<button type="submit" onclick="search_s = 2;nowa()">多吉</button>
-    <br> 
-    <a style="color: white">&copy; 2020 by LiangYin. All rights reserved.</a> 
-   </div> 
-  </footer> 
- </body>
+                function closeNav() {
+                        document.getElementById("mySidenav").style.width = "0";
+                }
+        </script>
+</head>
+
+<body onkeydown="Down()" lang="zh-cn">
+        <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <ul>
+                        <a>社区&middot;热门</a>
+                        <ul>
+                                <a rel="noreferrer" href="https://wx.qq.com/" target="_blank">微信</a>
+                                <a rel="noreferrer" href="https://www.jd.com/" target="_blank">京东</a>
+                                <a rel="noreferrer" href="https://www.taobao.com/" target="_blank">淘宝</a>
+                                <a rel="noreferrer" href="https://weibo.com/" target="_blank">微博</a>
+                                <a rel="noreferrer" href="https://www.office.com/" target="_blank">Office</a>
+                                <a rel="noreferrer" href="http://dict.youdao.com/" target="_blank">有道翻译</a>
+                                <a rel="noreferrer" href="https://pan.baidu.com/" target="_blank">百度网盘</a>
+                        </ul>
+                        <a>影视&middot;娱乐</a>
+                        <ul>
+                                <a rel="noreferrer" href="https://www.youku.com/" target="_blank">优酷</a>
+                                <a rel="noreferrer" href="https://www.iqiyi.com/" target="_blank">爱奇艺</a>
+                                <a rel="noreferrer" href="https://v.qq.com/" target="_blank">腾讯视频</a>
+                                <a rel="noreferrer" href="https://www.acfun.cn/" target="_blank">AcFun</a>
+                                <a rel="noreferrer" href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a>
+                                <a rel="noreferrer" href="https://music.163.com/" target="_blank">网易云音乐</a>
+                        </ul>
+                        <a>新闻&middot;社区</a>
+                        <ul>
+                                <a rel="noreferrer" href="https://www.douban.com/" target="_blank">豆瓣</a>
+                                <a rel="noreferrer" href="https://qzone.qq.com/" target="_blank">QQ空间</a>
+                                <a rel="noreferrer" href="https://news.qq.com/" target="_blank">腾讯新闻</a>
+                                <a rel="noreferrer" href="https://news.163.com/" target="_blank">网易新闻</a>
+                                <a rel="noreferrer" href="http://news.ifeng.com/" target="_blank">凤凰资讯</a>
+                                <a rel="noreferrer" href="https://tieba.baidu.com/" target="_blank">百度贴吧</a>
+                        </ul>
+                        <a>编程&middot;社区</a>
+                        <ul>
+                                <a rel="noreferrer" href="https://www.luogu.com.cn/" target="_blank">洛谷</a>
+                                <a rel="noreferrer" href="https://www.zhihu.com/" target="_blank">知乎</a>
+                                <a rel="noreferrer" href="https://gitee.com/" target="_blank">码云</a>
+                                <a rel="noreferrer" href="https://wiki.hk.wjbk.site/wiki/Wikipedia:%E9%A6%96%E9%A1%B5"
+                                        target="_blank">维基百科</a>
+                                <a rel="noreferrer" href="https://baike.baidu.com/" target="_blank">百度百科</a>
+                                <a rel="noreferrer" href="https://ke.qq.com/" target="_blank">腾讯课堂</a>
+                                <a rel="noreferrer" href="https://www.w3school.com.cn/" target="_blank">Web学习</a>
+                                <a rel="noreferrer" href="https://github.com/" target="_blank">Github</a>
+                        </ul>
+                </ul>
+        </div>
+        <span style="font-size:30px; cursor:pointer;" onclick="openNav()">☰</span>
+        <div style="text-align:center;vertical-align:middle;line-height: 600px;">
+                <input type="text" id="Put_01" placeholder="搜索..." class="Yuan_Jiao" οnkeyup="keyup()" />
+        </div>
+
+</body>
+
 </html>
