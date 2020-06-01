@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="LiangYinSearch,你的轻快主页" />
-  <title>Search|轻快</title>
+  <title>Search | Home</title>
   <link rel="stylesheet" href="./css/fluent.css" />
   <link rel="stylesheet" href="./css/bootstrap.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
@@ -88,6 +88,10 @@
     localStorage.searchurl = "https://www.bing.com/search?q=%s";
     $("#firststart").modal("show");
   }
+  else {
+    $("#searchurl").val(localStorage.searchurl);
+  }
+  
   if (localStorage.backgroundimg != null) {
     $("#body").attr("style", "width: 100%;height: 100%;background-image: url('" + localStorage.getItem("backgroundimg") + "')");
     $("#backgroundimg").val(localStorage.getItem("backgroundimg"));
