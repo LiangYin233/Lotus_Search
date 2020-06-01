@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="LiangYinSearch,你的轻快主页" />
+  <title>Search|轻快</title>
+  <link rel="stylesheet" href="./css/fluent.css" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+</head>
+
+<body style="background-color: white;width: 100%;height: 100%;" id="body">
+
+  <div class="modal fade" id="firststart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">感谢使用!</h5>
+        </div>
+        <div class="modal-body">
+          感谢您一路从Search1.0到4.0一直使用Search,今天,Search迎来了新版本6.0alpha。
+          <br>
+          这是您第一次使用Search6.0alpha,新Search有更美观的界面设计与更高自定义的体验,如自定义壁纸,自定义书签[即将上线]等。
+          <br>
+          让我们向曾经告别,与现在相聚。新Search,简而不凡,强而不繁。
+          <br>
+          注:所有数据保存在本地,请勿清除,造成数据损失。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button style="width: 50px;" class="btn btn-link" onclick="setting()">
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="720">
+      <path
+        d="M929.43 395.71H847a353.69 353.69 0 0 0-24.33-54.06l52.8-52.81a32.48 32.48 0 0 0 0-46L773 140.36a32.5 32.5 0 0 0-46 0l-55.81 55.82a353.08 353.08 0 0 0-56.33-22.5V95.3a32.5 32.5 0 0 0-32.5-32.5h-145a32.5 32.5 0 0 0-32.5 32.5v79.52a352.35 352.35 0 0 0-59.51 24.92l-54.31-54.31a32.51 32.51 0 0 0-46 0L142.56 248a32.5 32.5 0 0 0 0 46l54.53 54.53A351.54 351.54 0 0 0 170.84 413H93.23a32.5 32.5 0 0 0-32.5 32.5v145a32.5 32.5 0 0 0 32.5 32.5h80.15a351.72 351.72 0 0 0 29.15 66.3l-52.8 52.8a32.5 32.5 0 0 0 0 46l102.52 102.47a32.5 32.5 0 0 0 46 0l57.34-57.34A351.5 351.5 0 0 0 422.37 858v70.32a32.5 32.5 0 0 0 32.5 32.5h145a32.5 32.5 0 0 0 32.5-32.5v-80a352.7 352.7 0 0 0 57.38-26.74l50.13 50.13a32.5 32.5 0 0 0 46 0l102.47-102.56a32.5 32.5 0 0 0 0-46l-55.94-55.93a351.26 351.26 0 0 0 22.73-61.57h74.29a32.5 32.5 0 0 0 32.5-32.5v-145a32.5 32.5 0 0 0-32.5-32.44z m-32.5 145h-67.75a32.5 32.5 0 0 0-31.95 26.57 287.64 287.64 0 0 1-32.92 90 32.49 32.49 0 0 0 5.27 39.05l49.83 49.83-56.56 56.56-45.51-45.51a32.51 32.51 0 0 0-41.39-3.8A288.43 288.43 0 0 1 591 793.35a32.5 32.5 0 0 0-23.65 31.27v71.17h-80v-64a32.51 32.51 0 0 0-26.81-32A287.52 287.52 0 0 1 366 765.12a32.49 32.49 0 0 0-39.32 5.11l-51.4 51.4-56.56-56.56 48-48a32.51 32.51 0 0 0 4-41.14 287.93 287.93 0 0 1-41.12-93.1A32.5 32.5 0 0 0 198 558h-72.27v-80h70.34a32.51 32.51 0 0 0 31.77-25.65 287.75 287.75 0 0 1 37.38-92.1 32.49 32.49 0 0 0-4.58-40.2l-49.13-49.13 56.56-56.56 49 49a32.48 32.48 0 0 0 40.28 4.53 288.13 288.13 0 0 1 87.5-36.66 32.51 32.51 0 0 0 25.05-31.64V127.8h80v70.93a32.51 32.51 0 0 0 25.42 31.72 288.12 288.12 0 0 1 85 33.84 32.51 32.51 0 0 0 39.64-4.92L750 209.3l56.56 56.56-47.82 47.83a32.49 32.49 0 0 0-4.18 40.84 288.22 288.22 0 0 1 38 85.14 32.53 32.53 0 0 0 45.47 21h58.9z"
+        fill="#CCCCCC" p-id="721"></path>
+      <path
+        d="M512.54 349.31c-91.36 0-165.68 74.33-165.68 165.69s74.32 165.68 165.68 165.68S678.22 606.35 678.22 515 603.9 349.31 512.54 349.31z m0 266.37A100.69 100.69 0 1 1 613.22 515a100.79 100.79 0 0 1-100.68 100.68z"
+        fill="#CCCCCC" p-id="722"></path>
+    </svg>
+  </button>
+
+
+  <div id="memu" style="display: inline;">
+    <div class="search bar">
+      <input placeholder="搜索" type="text" id="stext">
+      <button id="StartSearch"></button>
+    </div>
+
+  </div>
+
+  <div style="display: none;" id="set">
+    <div style=" padding: 10px 0;position: relative;width: 50%;margin: 0 auto;top: 100px;">
+      <input placeholder="背景URL" type="url" id="backgroundimg" style="width: 100%;height: 42px;padding-left: 13px;"
+        onkeydown="localStorage.backgroundimg = document.getElementById('backgroundimg').value">
+      <input placeholder="搜索引擎URL,搜索内容用%s代替" type="url" id="searchurl"
+        style="width: 100%;height: 42px;padding-left: 13px;"
+        onkeydown="localStorage.searchurl = document.getElementById('searchurl').value">
+    </div>
+
+  </div>
+
+
+  <footer class="page-footer font-small blue" style="position: fixed;bottom: 0px;width: 100%;z-index: 9999;">
+    <div class="footer-copyright text-center py-3 text-white-50">© 2020 Copyright:
+      <a href="https://liangyin.net.cn/" class="text-white"> LiangYin</a>
+    </div>
+  </footer>
+
+</body>
+<!-- JQuery -->
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+<script>
+  if (localStorage.searchfirststart == null) {
+
+    localStorage.searchfirststart = 1;
+    $("#searchurl").val("https://www.bing.com/search?q=%s");
+    localStorage.searchurl = "https://www.bing.com/search?q=%s";
+    $("#firststart").modal("show");
+  }
+  if (localStorage.backgroundimg != null) {
+    $("#body").attr("style", "width: 100%;height: 100%;background-image: url('" + localStorage.getItem("backgroundimg") + "')");
+    $("#backgroundimg").val(localStorage.getItem("backgroundimg"));
+  }
+
+  function setting() {
+    if (document.getElementById("memu").style.display == "none") {
+      document.getElementById("memu").style.display = "inline";
+      document.getElementById("set").style.display = "none";
+    }
+    else if (document.getElementById("memu").style.display == "inline") {
+      document.getElementById("set").style.display = "inline";
+      document.getElementById("memu").style.display = "none";
+    }
+
+  }
+
+  $("#StartSearch").click(function () {
+    var url = localStorage.getItem("searchurl");
+    window.open(url.replace(/%s/, String($("#stext").val())));
+  })
+</script>
+
+</html>
