@@ -49,7 +49,7 @@
 
   <div id="memu" style="display: inline;">
     <div class="search bar">
-      <input placeholder="搜索" type="text" id="stext">
+      <input placeholder="搜索" type="text" id="stext" onkeydown="">
       <button id="StartSearch"></button>
     </div>
 
@@ -58,10 +58,10 @@
   <div style="display: none;" id="set">
     <div style=" padding: 10px 0;position: relative;width: 50%;margin: 0 auto;top: 100px;">
       <input placeholder="背景URL" type="url" id="backgroundimg" style="width: 100%;height: 42px;padding-left: 13px;"
-        onkeydown="localStorage.backgroundimg = document.getElementById('backgroundimg').value">
+        onkeyup="localStorage.backgroundimg = document.getElementById('backgroundimg').value">
       <input placeholder="搜索引擎URL,搜索内容用%s代替" type="url" id="searchurl"
         style="width: 100%;height: 42px;padding-left: 13px;"
-        onkeydown="localStorage.searchurl = document.getElementById('searchurl').value">
+        onkeyup="localStorage.searchurl = document.getElementById('searchurl').value">
     </div>
 
   </div>
@@ -83,7 +83,6 @@
 
 <script>
   if (localStorage.searchfirststart == null) {
-
     localStorage.searchfirststart = 1;
     $("#searchurl").val("https://www.bing.com/search?q=%s");
     localStorage.searchurl = "https://www.bing.com/search?q=%s";
@@ -109,7 +108,14 @@
   $("#StartSearch").click(function () {
     var url = localStorage.getItem("searchurl");
     window.open(url.replace(/%s/, String($("#stext").val())));
-  })
+  });
+
+  $("#stext").keyup(function (event) {
+    if (event.keyCode == 13 && (document.getElementById('memu').style.display == 'inline')) {
+      var url = localStorage.getItem("searchurl");
+      window.open(url.replace(/%s/, String($('#stext').val())));
+    }
+  });
 </script>
 
 </html>
