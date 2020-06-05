@@ -55,13 +55,9 @@
           <h5 class="modal-title" id="exampleModalLabel">Search新版本发布了</h5>
         </div>
         <div class="modal-body">
-          Hi,Search6alpha3发布了,以下是更新日志:
+          Hi,Search6alpha3.1发布了,以下是更新日志:
           <br>
-          智能更新提醒
-          <br>
-          更改部分内容
-          <br>
-          增加生日提醒
+          修复bug与增加问候。
         </div>
       </div>
     </div>
@@ -108,8 +104,11 @@
         onkeyup="localStorage.backgroundimg = $('#backgroundimg').val()">
       <input placeholder="搜索引擎URL,搜索内容用%s代替" type="url" id="searchurl"
         style="width: 100%;height: 42px;padding-left: 13px;" onkeyup="localStorage.searchurl = $('#searchurl').val()">
-      <input placeholder="您的生日,如4:22或4:2" id="birthdate" style="width: 100%;height: 42px;padding-left: 13px;"
+      <input placeholder="您的生日,如4:22或4:2" id="birthdate" type="text"
+        style="width: 100%;height: 42px;padding-left: 13px;"
         onkeyup="localStorage.birthday = $('#birthdate').val();localStorage.lastyear = 0;">
+      <input placeholder="如何称呼您？" id="name" type="text" style="width: 100%;height: 42px;padding-left: 13px;"
+        onkeyup="localStorage.name = $('#name').val();">
     </div>
 
   </div>
@@ -130,13 +129,26 @@
 <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
 <script>
-  const nowversion = 6.02;
+  const nowversion = 6.03;
   var birthdaydate = new Array();
   birthdaydate = String(localStorage.birthday).split(':');
 
   if (birthdaydate[0] == new Date().getMonth() + 1 && birthdaydate[1] == new Date().getDay() && localStorage.lastyear != new Date().getYear()) {
     $("#birthday").modal("show");
     localStorage.lastyear = new Date().getYear()
+  }
+
+  if (localStorage.name != null) {
+    var Hour = new Date().getHours();
+    var name = localStorage.name;
+    if (Hour <= 11)
+      $("#stext").attr("placeholder", name + "，上午好.");
+    else if (Hour > 11 && Hour < 14)
+      $("#stext").attr("placeholder", name + "，中午好.");
+    else if (Hour > 14 && Hour < 19)
+      $("#stext").attr("placeholder", name + "，下午好.");
+    else if (Hour > 18)
+      $("#stext").attr("placeholder", name + "，晚上好.");
   }
 
   if (localStorage.searchfirststart == null) {
@@ -152,6 +164,7 @@
   }
 
   if (Number(localStorage.version) < nowversion) {
+    localStorage.version = nowversion;
     $("#new").modal("show");
   }
 
@@ -182,7 +195,7 @@
 
   $("#stext").keyup(function (event) {
     if (event.keyCode == 13 && (document.getElementById('memu').style.display == 'inline')) {
-      var url = localStorage.getItem("searchurl");
+      var url = localStorage.searchurl;
       window.open(url.replace(/%s/, String($('#stext').val())));
     }
   });
