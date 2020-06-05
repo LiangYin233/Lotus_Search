@@ -10,6 +10,20 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <!-- 本JS代码为网页统计代码,在您的网站发布时请删除此代码。 -->
+  <!--This JS code is a webpage statistics code, please delete this code when your website is published. -->
+  <script>
+    var _mtac = {};
+    (function () {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500721482");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+  <!-- END -->
 </head>
 
 <body style="background-color: white;width: 100%;height: 100%;" id="body">
@@ -24,11 +38,44 @@
         <div class="modal-body">
           感谢您一路从Search1.0到4.0一直使用Search,今天,Search迎来了新版本6.0alpha。
           <br>
-          这是您第一次使用Search6.0alpha,新Search有更美观的界面设计与更高自定义的体验,如自定义壁纸,自定义书签[即将上线]等。
+          这是您第一次使用Search6.0alpha,新Search有更美观的界面设计与更高自定义的体验,如自定义壁纸,自定义搜索引擎等。
           <br>
           让我们向曾经告别,与现在相聚。新Search,简而不凡,强而不繁。
           <br>
           注:所有数据保存在本地,请勿清除,造成数据损失。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search新版本发布了</h5>
+        </div>
+        <div class="modal-body">
+          Hi,Search6alpha3发布了,以下是更新日志:
+          <br>
+          智能更新提醒
+          <br>
+          更改部分内容
+          <br>
+          增加生日提醒
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="birthday" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">生日快乐!</h5>
+        </div>
+        <div class="modal-body">
+          今天是您的生日,祝您生日快乐!
         </div>
       </div>
     </div>
@@ -58,10 +105,11 @@
   <div style="display: none;" id="set">
     <div style=" padding: 10px 0;position: relative;width: 50%;margin: 0 auto;top: 100px;">
       <input placeholder="背景URL" type="url" id="backgroundimg" style="width: 100%;height: 42px;padding-left: 13px;"
-        onkeyup="localStorage.backgroundimg = document.getElementById('backgroundimg').value">
+        onkeyup="localStorage.backgroundimg = $('#backgroundimg').val()">
       <input placeholder="搜索引擎URL,搜索内容用%s代替" type="url" id="searchurl"
-        style="width: 100%;height: 42px;padding-left: 13px;"
-        onkeyup="localStorage.searchurl = document.getElementById('searchurl').value">
+        style="width: 100%;height: 42px;padding-left: 13px;" onkeyup="localStorage.searchurl = $('#searchurl').val()">
+      <input placeholder="您的生日,如4:22或4:2" id="birthdate" style="width: 100%;height: 42px;padding-left: 13px;"
+        onkeyup="localStorage.birthday = $('#birthdate').val();localStorage.lastyear = 0;">
     </div>
 
   </div>
@@ -82,19 +130,33 @@
 <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
 <script>
+  const nowversion = 6.02;
+  var birthdaydate = new Array();
+  birthdaydate = String(localStorage.birthday).split(':');
+
+  if (birthdaydate[0] == new Date().getMonth() + 1 && birthdaydate[1] == new Date().getDay() && localStorage.lastyear != new Date().getYear()) {
+    $("#birthday").modal("show");
+    localStorage.lastyear = new Date().getYear()
+  }
+
   if (localStorage.searchfirststart == null) {
     localStorage.searchfirststart = 1;
-    $("#searchurl").val("https://www.bing.com/search?q=%s");
+    localStorage.lastyear = 0;
+    localStorage.version = nowversion;
     localStorage.searchurl = "https://www.bing.com/search?q=%s";
     $("#firststart").modal("show");
   }
-  else {
-    $("#searchurl").val(localStorage.searchurl);
+  else if (localStorage.version == null) {
+    localStorage.version = nowversion;
+    $("#new").modal("show");
   }
-  
+
+  if (Number(localStorage.version) < nowversion) {
+    $("#new").modal("show");
+  }
+
   if (localStorage.backgroundimg != null) {
     $("#body").attr("style", "width: 100%;height: 100%;background-image: url('" + localStorage.getItem("backgroundimg") + "')");
-    $("#backgroundimg").val(localStorage.getItem("backgroundimg"));
   }
 
   function setting() {
@@ -108,6 +170,10 @@
     }
 
   }
+
+  $("#searchurl").val(localStorage.searchurl);
+  $("#backgroundimg").val(localStorage.getItem("backgroundimg"));
+  $("#birthdate").val(localStorage.birthday);
 
   $("#StartSearch").click(function () {
     var url = localStorage.getItem("searchurl");
